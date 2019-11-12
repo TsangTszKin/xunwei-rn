@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-11 16:59:30
+ * @LastEditTime: 2019-11-12 10:47:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
@@ -10,8 +10,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import Banner from '../components/home/Banner';
-import CardList from '../components/home/CardList';
-import {WhiteSpace, WingBlank} from '@ant-design/react-native/lib';
+import MainPannel from '../components/home/MainPannel';
+import {WhiteSpace, WingBlank} from '@ant-design/react-native';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -21,15 +21,12 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <View>
+      <React.Fragment>
         <WhiteSpace />
         <Banner />
-        <WingBlank size="md">
-          <WhiteSpace />
-          <CardList />
-        </WingBlank>
+        <MainPannel />
         <WhiteSpace />
-      </View>
+      </React.Fragment>
     );
   }
 }

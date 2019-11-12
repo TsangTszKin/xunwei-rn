@@ -1,21 +1,31 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-11 16:51:30
+ * @LastEditTime: 2019-11-12 10:36:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
  */
 import React from 'react';
-import {Text, View, StatusBar} from 'react-native';
-import {Icon, SearchBar, TabBar} from '@ant-design/react-native/lib';
+import {Text, View, StatusBar, Image, StyleSheet} from 'react-native';
+import {Icon, SearchBar, TabBar, WhiteSpace} from '@ant-design/react-native';
 import Home from './pages/Home';
+import homeIcon from './resource/广场--点击.png';
+import homeIcon_ from './resource/广场.png';
+import findIcon from './resource/发现--点亮.png';
+import findIcon_ from './resource/发现.png';
+import msgIcon from './resource/未标题-1.png';
+import msgIcon_ from './resource/未标题-10.png';
+import myIcon from './resource/我的0=0.png';
+import myIcon_ from './resource/我的.png';
+
+import MainPannel from './components/home/MainPannel';
 
 export default class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'blueTab',
+      selectedTab: 'home',
     };
   }
 
@@ -40,35 +50,71 @@ export default class Index extends React.Component {
         <StatusBar barStyle="dark-content" />
         <TabBar
           unselectedTintColor="#949494"
-          tintColor="#33A3F4"
+          tintColor="#FBC464"
           barTintColor="#f5f5f5">
           <TabBar.Item
-            title="Life"
-            icon={<Icon name="home" />}
-            selected={this.state.selectedTab === 'blueTab'}
-            onPress={() => this.onChangeTab('blueTab')}>
+            title="寻味"
+            icon={
+              <Image
+                source={
+                  this.state.selectedTab === 'home' ? homeIcon : homeIcon_
+                }
+                style={
+                  this.state.selectedTab === 'home' ? styles.icon : styles.icon_
+                }
+              />
+            }
+            selected={this.state.selectedTab === 'home'}
+            onPress={() => this.onChangeTab('home')}>
             <Home />
           </TabBar.Item>
           <TabBar.Item
-            icon={<Icon name="ordered-list" />}
-            title="Koubei"
+            icon={
+              <Image
+                source={
+                  this.state.selectedTab === 'find' ? findIcon : findIcon_
+                }
+                style={
+                  this.state.selectedTab === 'find' ? styles.icon : styles.icon_
+                }
+              />
+            }
+            title="发现"
             badge={2}
-            selected={this.state.selectedTab === 'redTab'}
-            onPress={() => this.onChangeTab('redTab')}>
-            {this.renderContent('Koubei Tab')}
+            selected={this.state.selectedTab === 'find'}
+            onPress={() => this.onChangeTab('find')}>
+            <WhiteSpace />
+            <WhiteSpace />
+            <WhiteSpace />
+            <WhiteSpace />
+            <MainPannel />
           </TabBar.Item>
           <TabBar.Item
-            icon={<Icon name="like" />}
-            title="Friend"
-            selected={this.state.selectedTab === 'greenTab'}
-            onPress={() => this.onChangeTab('greenTab')}>
+            icon={
+              <Image
+                source={this.state.selectedTab === 'msg' ? msgIcon : msgIcon_}
+                style={
+                  this.state.selectedTab === 'msg' ? styles.icon : styles.icon_
+                }
+              />
+            }
+            title="动态"
+            selected={this.state.selectedTab === 'msg'}
+            onPress={() => this.onChangeTab('msg')}>
             {this.renderContent('Friend Tab')}
           </TabBar.Item>
           <TabBar.Item
-            icon={<Icon name="user" />}
-            title="My"
-            selected={this.state.selectedTab === 'yellowTab'}
-            onPress={() => this.onChangeTab('yellowTab')}>
+            icon={
+              <Image
+                source={this.state.selectedTab === 'my' ? myIcon : myIcon_}
+                style={
+                  this.state.selectedTab === 'my' ? styles.icon : styles.icon_
+                }
+              />
+            }
+            title="我的"
+            selected={this.state.selectedTab === 'my'}
+            onPress={() => this.onChangeTab('my')}>
             {this.renderContent('My Tab')}
           </TabBar.Item>
         </TabBar>
@@ -76,3 +122,14 @@ export default class Index extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  icon: {
+    width: 20,
+    height: 20,
+  },
+  icon_: {
+    width: 18,
+    height: 18,
+  },
+});

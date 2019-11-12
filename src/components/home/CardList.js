@@ -2,14 +2,14 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-11 17:39:26
+ * @LastEditTime: 2019-11-11 22:05:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
  */
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Card, WhiteSpace} from '@ant-design/react-native/lib';
+import {Card, WhiteSpace, Tabs} from '@ant-design/react-native';
 import PropTypes from 'prop-types';
 
 export default class CardList extends React.Component {
@@ -63,26 +63,26 @@ export default class CardList extends React.Component {
       <>
         {this.props.dataList.map((item, i) => {
           return (
-            <>
+            <React.Fragment key={i}>
               <Card>
                 <Card.Header
-                  title="This is title"
+                  title={item.userName}
                   thumbStyle={{width: 30, height: 30}}
-                  thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
-                  extra="this is extra"
+                  thumb={item.avator}
+                  extra={item.time}
                 />
                 <Card.Body>
                   <View style={{height: 42}}>
-                    <Text style={{marginLeft: 16}}>Card Content</Text>
+                    <Text style={{marginLeft: 16}}>{item.content}</Text>
                   </View>
                 </Card.Body>
                 <Card.Footer
-                  content="footer content"
-                  extra="footer extra content"
+                  content={item.likeCount}
+                  extra={item.commentCount}
                 />
               </Card>
               <WhiteSpace size="xs" />
-            </>
+            </React.Fragment>
           );
         })}
       </>
