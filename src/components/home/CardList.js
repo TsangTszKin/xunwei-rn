@@ -2,15 +2,17 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-11 22:05:35
+ * @LastEditTime: 2019-11-12 17:49:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
  */
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {Card, WhiteSpace, Tabs} from '@ant-design/react-native';
+import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
+import {Card, WhiteSpace, Grid} from '@ant-design/react-native';
 import PropTypes from 'prop-types';
+import myIcon from '../../resource/我的0=0.png';
+import BannerImg2 from '../../resource/u=3958675909,1639915875&fm=21&gp=0.jpg';
 
 export default class CardList extends React.Component {
   constructor(props) {
@@ -26,11 +28,23 @@ export default class CardList extends React.Component {
       {
         avator:
           'https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg',
-        userName: 'Tom',
+        userName: 'Tom12',
         time: '2019-11-11',
-        content: '主内容主内容主内容主内容主内容。。。。',
+        content:
+          '主内容主内容主内容主内容主内容。。。。主内容主内容主内容主内容主内容。。。。主内容主内容主内容主内容主内容。。。。主内容主内容主内容主内容主内容。。。。',
         likeCount: 10,
         commentCount: 10,
+        imgs: [
+          BannerImg2,
+          BannerImg2,
+          BannerImg2,
+          BannerImg2,
+          BannerImg2,
+          BannerImg2,
+          BannerImg2,
+          BannerImg2,
+          BannerImg2,
+        ],
       },
       {
         avator:
@@ -40,6 +54,7 @@ export default class CardList extends React.Component {
         content: '主内容主内容主内容主内容主内容。。。。',
         likeCount: 10,
         commentCount: 10,
+        imgs: [BannerImg2],
       },
       {
         avator:
@@ -49,6 +64,7 @@ export default class CardList extends React.Component {
         content: '主内容主内容主内容主内容主内容。。。。',
         likeCount: 10,
         commentCount: 10,
+        imgs: [BannerImg2],
       },
     ],
   };
@@ -59,8 +75,12 @@ export default class CardList extends React.Component {
   }
 
   render() {
+    const data = Array.from(new Array(9)).map((_val, i) => ({
+      icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+      text: `Name${i}`,
+    }));
     return (
-      <>
+      <React.Fragment>
         {this.props.dataList.map((item, i) => {
           return (
             <React.Fragment key={i}>
@@ -72,8 +92,32 @@ export default class CardList extends React.Component {
                   extra={item.time}
                 />
                 <Card.Body>
-                  <View style={{height: 42}}>
+                  <View>
                     <Text style={{marginLeft: 16}}>{item.content}</Text>
+                  </View>
+                  <View style={{marginTop: 20}}>
+                    <Grid
+                      style={{border: 'none'}}
+                      data={(() => {
+                        let result = [];
+                        item.imgs.forEach((el, j) => {
+                          result.push({
+                            icon: (
+                              <Image
+                                source={el}
+                                key={j}
+                                style={{width: '80%', height: '80%'}}
+                              />
+                            ),
+                            text: '',
+                          });
+                        });
+                        return result;
+                      })()}
+                      columnNum={3}
+                      isCarousel
+                      onPress={(_el, index) => alert(index)}
+                    />
                   </View>
                 </Card.Body>
                 <Card.Footer
@@ -85,12 +129,30 @@ export default class CardList extends React.Component {
             </React.Fragment>
           );
         })}
-      </>
+      </React.Fragment>
     );
   }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  avator: {
+    height: 50,
+    width: 50,
+  },
+  imgsShell: {
+    width: '100%',
+    // height: 500,
+    margin: 50,
+    marginTop: 100,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imgs: {
+    width: 80,
+    height: 80,
+  },
+});
 
 const dataList = [
   {

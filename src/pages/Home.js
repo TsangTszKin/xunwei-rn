@@ -2,13 +2,13 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-12 10:47:13
+ * @LastEditTime: 2019-11-12 17:37:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
  */
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, ScrollView} from 'react-native';
 import Banner from '../components/home/Banner';
 import MainPannel from '../components/home/MainPannel';
 import {WhiteSpace, WingBlank} from '@ant-design/react-native';
@@ -21,12 +21,12 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <ScrollView>
         <WhiteSpace />
         <Banner />
         <MainPannel />
         <WhiteSpace />
-      </React.Fragment>
+      </ScrollView>
     );
   }
 }

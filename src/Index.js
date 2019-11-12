@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-12 10:36:29
+ * @LastEditTime: 2019-11-12 17:40:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
@@ -83,11 +83,11 @@ export default class Index extends React.Component {
             badge={2}
             selected={this.state.selectedTab === 'find'}
             onPress={() => this.onChangeTab('find')}>
+            {/* <WhiteSpace />
             <WhiteSpace />
             <WhiteSpace />
             <WhiteSpace />
-            <WhiteSpace />
-            <MainPannel />
+            <MainPannel /> */}
           </TabBar.Item>
           <TabBar.Item
             icon={
