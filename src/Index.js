@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-12 17:40:06
+ * @LastEditTime: 2019-11-13 15:21:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
@@ -10,6 +10,9 @@ import React from 'react';
 import {Text, View, StatusBar, Image, StyleSheet} from 'react-native';
 import {Icon, SearchBar, TabBar, WhiteSpace} from '@ant-design/react-native';
 import Home from './pages/Home';
+import Find from './pages/Find';
+import Message from './pages/Message';
+import My from './pages/My';
 import homeIcon from './resource/广场--点击.png';
 import homeIcon_ from './resource/广场.png';
 import findIcon from './resource/发现--点亮.png';
@@ -29,15 +32,6 @@ export default class Index extends React.Component {
     };
   }
 
-  renderContent(pageText) {
-    return (
-      <View style={{flex: 1, alignItems: 'center', backgroundColor: 'white'}}>
-        <SearchBar placeholder="Search" showCancelButton />
-        <Text style={{margin: 50}}>{pageText}</Text>
-      </View>
-    );
-  }
-
   onChangeTab(tabName) {
     this.setState({
       selectedTab: tabName,
@@ -51,7 +45,8 @@ export default class Index extends React.Component {
         <TabBar
           unselectedTintColor="#949494"
           tintColor="#FBC464"
-          barTintColor="#f5f5f5">
+          barTintColor="#f5f5f5"
+          style={{height: '100%'}}>
           <TabBar.Item
             title="寻味"
             icon={
@@ -83,11 +78,7 @@ export default class Index extends React.Component {
             badge={2}
             selected={this.state.selectedTab === 'find'}
             onPress={() => this.onChangeTab('find')}>
-            {/* <WhiteSpace />
-            <WhiteSpace />
-            <WhiteSpace />
-            <WhiteSpace />
-            <MainPannel /> */}
+            <Find />
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -101,7 +92,7 @@ export default class Index extends React.Component {
             title="动态"
             selected={this.state.selectedTab === 'msg'}
             onPress={() => this.onChangeTab('msg')}>
-            {this.renderContent('Friend Tab')}
+            <Message />
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -115,7 +106,7 @@ export default class Index extends React.Component {
             title="我的"
             selected={this.state.selectedTab === 'my'}
             onPress={() => this.onChangeTab('my')}>
-            {this.renderContent('My Tab')}
+            <My />
           </TabBar.Item>
         </TabBar>
       </>

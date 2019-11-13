@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-12 17:37:54
+ * @LastEditTime: 2019-11-13 12:28:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
@@ -11,7 +11,7 @@ import React from 'react';
 import {StyleSheet, ScrollView} from 'react-native';
 import Banner from '../components/home/Banner';
 import MainPannel from '../components/home/MainPannel';
-import {WhiteSpace, WingBlank} from '@ant-design/react-native';
+import {WhiteSpace, WingBlank, SearchBar} from '@ant-design/react-native';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -22,6 +22,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <ScrollView>
+        <SearchBar placeholder="搜索商户、美食、地点、用户" />
         <WhiteSpace />
         <Banner />
         <MainPannel />
