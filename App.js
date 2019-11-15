@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:26:45
- * @LastEditTime: 2019-11-12 16:47:45
+ * @LastEditTime: 2019-11-15 08:49:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\App.js
@@ -19,15 +19,19 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {Provider} from '@ant-design/react-native';
 import IndexScreen from './src/Index';
+import SplashScreen from './src/pages/Splash';
 
 const AppNavigator = createStackNavigator(
   {
     Index: {
       screen: IndexScreen,
     },
+    Splash: {
+      screen: SplashScreen,
+    },
   },
   {
-    initialRouteName: 'Index',
+    initialRouteName: 'Splash',
   },
 );
 
