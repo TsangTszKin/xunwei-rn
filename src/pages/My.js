@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-13 13:48:13
- * @LastEditTime: 2019-11-13 16:39:13
+ * @LastEditTime: 2019-11-17 13:00:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\pages\Message.js
@@ -18,8 +18,9 @@ import {
 import {Tabs, Icon, Grid} from '@ant-design/react-native';
 import Notice from '../components/message/Notice';
 import Follow from '../components/message/Follow';
-import BG_img from '../resource/广场banner.jpg';
+import BG_img from '../resource/my-bg.jpg';
 import Avator from '../resource/avator/3.jpg';
+import MainPannel from '../components/home/MainPannel';
 
 export default class Message extends React.Component {
   render() {
@@ -41,7 +42,7 @@ export default class Message extends React.Component {
               <View>
                 <Image
                   source={Avator}
-                  style={{width: 60, height: 60, borderRadius: 60}}
+                  style={{width: 70, height: 70, borderRadius: 70}}
                 />
               </View>
               <Text style={{fontSize: 18, margin: 8}}>小喜</Text>
@@ -77,14 +78,16 @@ export default class Message extends React.Component {
           <Tabs
             tabs={[{title: '发布'}, {title: '店铺收藏'}]}
             tabBarActiveTextColor="#333"
-            tabBarInactiveTextColor="#E4E4E4"
+            tabBarInactiveTextColor="#808080"
             // tabBarBackgroundColor="#FBC464"
             tabBarUnderlineStyle="#FBC464"
             renderUnderline={s => {
               return <View style={{backgroundColor: '#000'}} />;
             }}>
-            <View style={style}>{/* <Follow /> */}</View>
-            <View style={style}>{/* <Notice /> */}</View>
+            <View>
+              <MainPannel />
+            </View>
+            <View>{/* <Notice /> */}</View>
           </Tabs>
         </View>
       </View>

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-13 13:48:13
- * @LastEditTime: 2019-11-13 16:35:33
+ * @LastEditTime: 2019-11-17 13:01:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\pages\Message.js
@@ -25,7 +25,7 @@ export default class Message extends React.Component {
         <Tabs
           tabs={tabs}
           tabBarActiveTextColor="#000"
-          tabBarInactiveTextColor="#E4E4E4"
+          tabBarInactiveTextColor="#808080"
           tabBarBackgroundColor="#FBC464"
           tabBarUnderlineStyle="#FBC464"
           renderUnderline={s => {

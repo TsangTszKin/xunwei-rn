@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-15 08:43:12
+ * @LastEditTime: 2019-11-18 09:05:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
@@ -31,6 +31,12 @@ export default class Index extends React.Component {
       selectedTab: 'home',
     };
   }
+
+  static navigationOptions = ({navigation}) => {
+    return {
+      header: () => null, // 隐藏头部
+    };
+  };
 
   onChangeTab(tabName) {
     this.setState({
@@ -78,7 +84,7 @@ export default class Index extends React.Component {
             badge={2}
             selected={this.state.selectedTab === 'find'}
             onPress={() => this.onChangeTab('find')}>
-            <Find />
+            <Find {...this.props} />
           </TabBar.Item>
           <TabBar.Item
             icon={

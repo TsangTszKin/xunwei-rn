@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-13 13:46:26
+ * @LastEditTime: 2019-11-18 10:14:22
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
@@ -52,7 +52,17 @@ export default class Find extends React.Component {
             })()}
             columnNum={2}
             isCarousel
-            onPress={(_el, index) => alert(index)}
+            onPress={(_el, index) => {
+              switch (index) {
+                case 0:
+                  this.props.navigation.navigate('FindXiaqu');
+                  break;
+                case 1:
+                  this.props.navigation.navigate('FindMetro');
+                default:
+                  break;
+              }
+            }}
           />
         </View>
       </ScrollView>

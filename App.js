@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:26:45
- * @LastEditTime: 2019-11-15 08:49:33
+ * @LastEditTime: 2019-11-18 10:13:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\App.js
@@ -20,6 +20,8 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {Provider} from '@ant-design/react-native';
 import IndexScreen from './src/Index';
 import SplashScreen from './src/pages/Splash';
+import FindXiaquScreen from './src/pages/FindXiaqu';
+import FindMetroScreen from './src/pages/FindMetro';
 
 const AppNavigator = createStackNavigator(
   {
@@ -28,6 +30,12 @@ const AppNavigator = createStackNavigator(
     },
     Splash: {
       screen: SplashScreen,
+    },
+    FindXiaqu: {
+      screen: FindXiaquScreen,
+    },
+    FindMetro: {
+      screen: FindMetroScreen,
     },
   },
   {
