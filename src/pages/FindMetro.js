@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-17 14:29:30
- * @LastEditTime: 2019-11-19 14:51:04
+ * @LastEditTime: 2019-11-19 17:17:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\pages\FindMetro.js
@@ -85,7 +85,7 @@ export default class FindMetro extends React.Component {
         <View style={{flex: 1, padding: 8}}>
           <ShopListPannel />
           <Button onPress={() => this.drawer && this.drawer.openDrawer()}>
-            Open drawer
+            根据地铁站点查找
           </Button>
         </View>
       </Drawer>
