@@ -1,7 +1,8 @@
+/* eslint-disable react-native/no-inline-styles */
 /*
  * @Author: your name
  * @Date: 2019-11-17 14:29:30
- * @LastEditTime: 2019-11-18 10:14:34
+ * @LastEditTime: 2019-11-19 14:51:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\pages\FindMetro.js
@@ -10,6 +11,7 @@ import React from 'react';
 import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
 import {Button, Drawer, List, WhiteSpace} from '@ant-design/react-native';
 import MetroImg from '../resource/地铁(1).png';
+import ShopListPannel from '../components/common/ShopListPannel';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,30 +34,6 @@ export default class FindMetro extends React.Component {
 
   render() {
     const itemArr = lineMetro.map((item, index) => {
-      //   if (index === 0) {
-      //     return (
-      //       <List.Item
-      //         style={{backgroundColor: '#333'}}
-      //         key={index}
-      //         thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-      //         multipleLine>
-      //         <View
-      //           style={{
-      //             flexDirection: 'row',
-      //             justifyContent: 'space-between',
-      //             alignItems: 'center',
-      //           }}>
-      //           <Text>{item.name}号线</Text>
-      //           <Button
-      //             type="primary"
-      //             size="small"
-      //             onPress={() => this.drawer.closeDrawer()}>
-      //             close drawer
-      //           </Button>
-      //         </View>
-      //       </List.Item>
-      //     );
-      //   }
       return (
         <List.Item
           style={{backgroundColor: '#333'}}
@@ -80,7 +58,6 @@ export default class FindMetro extends React.Component {
         </List.Item>
       );
     });
-    // Todo: https://github.com/DefinitelyTyped/DefinitelyTyped
     const sidebar = (
       <ScrollView style={[styles.container]}>
         <View
@@ -105,11 +82,11 @@ export default class FindMetro extends React.Component {
         drawerRef={el => (this.drawer = el)}
         onOpenChange={this.onOpenChange}
         drawerBackgroundColor="#ccc">
-        <View style={{flex: 1, marginTop: 114, padding: 8}}>
+        <View style={{flex: 1, padding: 8}}>
+          <ShopListPannel />
           <Button onPress={() => this.drawer && this.drawer.openDrawer()}>
             Open drawer
           </Button>
-          <WhiteSpace />
         </View>
       </Drawer>
     );
