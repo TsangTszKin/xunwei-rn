@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.hello_world"
+        applicationId "com.xunwei_rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

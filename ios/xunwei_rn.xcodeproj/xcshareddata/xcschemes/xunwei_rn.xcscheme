@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "hello_world.app"
-               BlueprintName = "hello_world"
-               ReferencedContainer = "container:hello_world.xcodeproj">
+               BuildableName = "xunwei_rn.app"
+               BlueprintName = "xunwei_rn"
+               ReferencedContainer = "container:xunwei_rn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "hello_worldTests.xctest"
-               BlueprintName = "hello_worldTests"
-               ReferencedContainer = "container:hello_world.xcodeproj">
+               BuildableName = "xunwei_rnTests.xctest"
+               BlueprintName = "xunwei_rnTests"
+               ReferencedContainer = "container:xunwei_rn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "hello_worldTests.xctest"
-               BlueprintName = "hello_worldTests"
-               ReferencedContainer = "container:hello_world.xcodeproj">
+               BuildableName = "xunwei_rnTests.xctest"
+               BlueprintName = "xunwei_rnTests"
+               ReferencedContainer = "container:xunwei_rn.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "hello_world.app"
-            BlueprintName = "hello_world"
-            ReferencedContainer = "container:hello_world.xcodeproj">
+            BuildableName = "xunwei_rn.app"
+            BlueprintName = "xunwei_rn"
+            ReferencedContainer = "container:xunwei_rn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "hello_world.app"
-            BlueprintName = "hello_world"
-            ReferencedContainer = "container:hello_world.xcodeproj">
+            BuildableName = "xunwei_rn.app"
+            BlueprintName = "xunwei_rn"
+            ReferencedContainer = "container:xunwei_rn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "hello_world.app"
-            BlueprintName = "hello_world"
-            ReferencedContainer = "container:hello_world.xcodeproj">
+            BuildableName = "xunwei_rn.app"
+            BlueprintName = "xunwei_rn"
+            ReferencedContainer = "container:xunwei_rn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

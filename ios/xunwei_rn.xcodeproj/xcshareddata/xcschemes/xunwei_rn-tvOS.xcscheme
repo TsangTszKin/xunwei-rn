@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "hello_world-tvOS.app"
-               BlueprintName = "hello_world-tvOS"
-               ReferencedContainer = "container:hello_world.xcodeproj">
+               BuildableName = "xunwei_rn-tvOS.app"
+               BlueprintName = "xunwei_rn-tvOS"
+               ReferencedContainer = "container:xunwei_rn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "hello_world-tvOSTests.xctest"
-               BlueprintName = "hello_world-tvOSTests"
-               ReferencedContainer = "container:hello_world.xcodeproj">
+               BuildableName = "xunwei_rn-tvOSTests.xctest"
+               BlueprintName = "xunwei_rn-tvOSTests"
+               ReferencedContainer = "container:xunwei_rn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "hello_world-tvOSTests.xctest"
-               BlueprintName = "hello_world-tvOSTests"
-               ReferencedContainer = "container:hello_world.xcodeproj">
+               BuildableName = "xunwei_rn-tvOSTests.xctest"
+               BlueprintName = "xunwei_rn-tvOSTests"
+               ReferencedContainer = "container:xunwei_rn.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "hello_world-tvOS.app"
-            BlueprintName = "hello_world-tvOS"
-            ReferencedContainer = "container:hello_world.xcodeproj">
+            BuildableName = "xunwei_rn-tvOS.app"
+            BlueprintName = "xunwei_rn-tvOS"
+            ReferencedContainer = "container:xunwei_rn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "hello_world-tvOS.app"
-            BlueprintName = "hello_world-tvOS"
-            ReferencedContainer = "container:hello_world.xcodeproj">
+            BuildableName = "xunwei_rn-tvOS.app"
+            BlueprintName = "xunwei_rn-tvOS"
+            ReferencedContainer = "container:xunwei_rn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "hello_world-tvOS.app"
-            BlueprintName = "hello_world-tvOS"
-            ReferencedContainer = "container:hello_world.xcodeproj">
+            BuildableName = "xunwei_rn-tvOS.app"
+            BlueprintName = "xunwei_rn-tvOS"
+            ReferencedContainer = "container:xunwei_rn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

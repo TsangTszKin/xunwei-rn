@@ -1,4 +1,4 @@
-package com.hello_world;
+package com.xunwei_rn;
 
 import android.app.Application;
 import android.content.Context;

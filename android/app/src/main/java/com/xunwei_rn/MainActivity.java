@@ -1,4 +1,4 @@
-package com.hello_world;
+package com.xunwei_rn;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "hello_world";
+    return "xunwei_rn";
   }
 }
