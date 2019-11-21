@@ -2,25 +2,37 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-18 09:00:52
+ * @LastEditTime: 2019-11-21 16:06:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
  */
 import React from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import Banner from '../components/home/Banner';
-import MainPannel from '../components/home/MainPannel';
-import {WhiteSpace, WingBlank, SearchBar} from '@ant-design/react-native';
+import {WhiteSpace, SearchBar} from '@ant-design/react-native';
+import ShareListPannel from '../components/common/ShareListPannel';
+import store from '../store/Home';
+import {observer, inject} from 'mobx-react';
 
-export default class Home extends React.Component {
+@inject('indexStore')
+@observer
+class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-  static navigationOptions = {
-    tabBarLabel: 'Home!',
-  };
+
+  componentDidMount() {
+    this.isLoadedData();
+  }
+
+  isLoadedData() {
+    if (!this.props.indexStore.pageLoaded.getData.home) {
+      store.getShareListForApi();
+      this.props.indexStore.pageLoaded.updateData('home', true);
+    }
+  }
 
   render() {
     return (
@@ -28,11 +40,12 @@ export default class Home extends React.Component {
         <SearchBar placeholder="搜索商户、美食、地点、用户" />
         <WhiteSpace />
         <Banner />
-        <MainPannel />
+        <View style={{marginTop: 10}}>
+          <ShareListPannel dataList={store.list.getData.dataSource} />
+        </View>
         <WhiteSpace />
       </ScrollView>
     );
   }
 }
-
-const styles = StyleSheet.create({});
+export default Home;

@@ -2,26 +2,24 @@
 /*
  * @Author: your name
  * @Date: 2019-11-17 14:29:30
- * @LastEditTime: 2019-11-19 17:17:59
+ * @LastEditTime: 2019-11-21 15:15:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\pages\FindXiaqu.js
  */
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
-import {Button, Drawer, List, WhiteSpace} from '@ant-design/react-native';
+import {Button, Drawer, List, Toast} from '@ant-design/react-native';
 import AreaImg from '../resource/行政区(1).png';
 import ShopListPannel from '../components/common/ShopListPannel';
+import store from '../store/Find';
+import {observer} from 'mobx-react';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#333',
-  },
-});
-export default class FindXiaqu extends React.Component {
+@observer
+class FindXiaqu extends React.Component {
   constructor(props) {
     super(props);
+    this.store = new store();
     this.onOpenChange = isOpen => {
       /* tslint:disable: no-console */
       console.log('是否打开了 Drawer', isOpen.toString());
@@ -32,32 +30,21 @@ export default class FindXiaqu extends React.Component {
     title: '辖区',
   };
 
+  componentDidMount() {
+    Toast.loading('Loading...', 1, () => {
+      console.log('Load complete !!!');
+    });
+    this.store.getShopListForApi();
+  }
+
   render() {
     const itemArr = areaList.map((item, index) => {
       return (
-        <List.Item
-          style={{backgroundColor: '#333'}}
-          key={index}
-          // thumb={
-          //   <Text
-          //     style={{
-          //       backgroundColor: item.color,
-          //       width: item.special ? 45 : 30,
-          //       height: 30,
-          //       borderRadius: item.special ? 45 : 30,
-          //       lineHeight: 30,
-          //       textAlign: 'center',
-          //       color: '#FFF',
-          //     }}>
-          //     {item.name}
-          //   </Text>
-          // }
-        >
+        <List.Item style={{backgroundColor: '#333'}} key={index}>
           <Text style={{color: '#FFF', marginLeft: 10}}>{item.name}</Text>
         </List.Item>
       );
     });
-    // Todo: https://github.com/DefinitelyTyped/DefinitelyTyped
     const sidebar = (
       <ScrollView style={[styles.container]}>
         <View
@@ -83,7 +70,7 @@ export default class FindXiaqu extends React.Component {
         onOpenChange={this.onOpenChange}
         drawerBackgroundColor="#ccc">
         <View style={{flex: 1, padding: 8}}>
-          <ShopListPannel />
+          <ShopListPannel dataList={this.store.list.getData.dataSource} />
           <Button onPress={() => this.drawer && this.drawer.openDrawer()}>
             根据行政区域查找
           </Button>
@@ -92,6 +79,15 @@ export default class FindXiaqu extends React.Component {
     );
   }
 }
+
+export default FindXiaqu;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#333',
+  },
+});
 
 const areaList = [
   {

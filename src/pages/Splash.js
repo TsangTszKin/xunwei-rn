@@ -2,20 +2,13 @@
 /*
  * @Author: your name
  * @Date: 2019-11-08 16:53:14
- * @LastEditTime: 2019-11-20 15:13:00
+ * @LastEditTime: 2019-11-20 20:48:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\Index.js
  */
 import React from 'react';
-import { StyleSheet, ScrollView, Image, View } from 'react-native';
-import Banner from '../components/home/Banner';
-import MainPannel from '../components/home/MainPannel';
-import { WhiteSpace, Grid, SearchBar } from '@ant-design/react-native';
-import Img1 from '../resource/发现--辖区.png';
-import Img2 from '../resource/发现--地铁线.png';
-import Img3 from '../resource/发现--附近.png';
-import Img4 from '../resource/发现--同城.png';
+import {StyleSheet, Image} from 'react-native';
 import SplashImg from '../resource/start.png';
 
 export default class Splash extends React.Component {
@@ -24,7 +17,7 @@ export default class Splash extends React.Component {
     this.state = {};
   }
 
-  static navigationOptions = ({ navigation }) => {
+  static navigationOptions = () => {
     return {
       header: () => null, // 隐藏头部
     };
@@ -37,10 +30,6 @@ export default class Splash extends React.Component {
   }
 
   render() {
-    return (
-      <Image source={SplashImg} style={{ width: '100%', height: '100%' }} />
-    );
+    return <Image source={SplashImg} style={{width: '100%', height: '100%'}} />;
   }
 }
-
-const styles = StyleSheet.create({});

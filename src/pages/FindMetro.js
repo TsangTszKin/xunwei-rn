@@ -2,26 +2,24 @@
 /*
  * @Author: your name
  * @Date: 2019-11-17 14:29:30
- * @LastEditTime: 2019-11-19 17:17:47
+ * @LastEditTime: 2019-11-21 15:08:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hello_world\src\pages\FindMetro.js
  */
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
-import {Button, Drawer, List, WhiteSpace} from '@ant-design/react-native';
+import {Button, Drawer, List} from '@ant-design/react-native';
 import MetroImg from '../resource/地铁(1).png';
 import ShopListPannel from '../components/common/ShopListPannel';
+import store from '../store/Find';
+import {observer} from 'mobx-react';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#333',
-  },
-});
-export default class FindMetro extends React.Component {
+@observer
+class FindMetro extends React.Component {
   constructor(props) {
     super(props);
+    this.store = new store();
     this.onOpenChange = isOpen => {
       /* tslint:disable: no-console */
       console.log('是否打开了 Drawer', isOpen.toString());
@@ -31,6 +29,10 @@ export default class FindMetro extends React.Component {
   static navigationOptions = {
     title: '地铁',
   };
+
+  componentDidMount() {
+    this.store.getShopListForApi();
+  }
 
   render() {
     const itemArr = lineMetro.map((item, index) => {
@@ -83,7 +85,7 @@ export default class FindMetro extends React.Component {
         onOpenChange={this.onOpenChange}
         drawerBackgroundColor="#ccc">
         <View style={{flex: 1, padding: 8}}>
-          <ShopListPannel />
+          <ShopListPannel dataList={this.store.list.getData.dataSource} />
           <Button onPress={() => this.drawer && this.drawer.openDrawer()}>
             根据地铁站点查找
           </Button>
@@ -92,7 +94,14 @@ export default class FindMetro extends React.Component {
     );
   }
 }
+export default FindMetro;
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#333',
+  },
+});
 const lineMetro = [
   {
     name: '1',
