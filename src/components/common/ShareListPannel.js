@@ -11,6 +11,42 @@ import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import {Card, WhiteSpace, Grid, Icon} from '@ant-design/react-native';
 import PropTypes from 'prop-types';
+import Mock from 'mockjs';
+// 图片资源
+import Avator1 from '../../resource/avator/1.jpg';
+import Avator2 from '../../resource/avator/2.jpg';
+import Avator3 from '../../resource/avator/3.jpg';
+import Food1 from '../../resource/foods/1.jpg';
+import Food2 from '../../resource/foods/2.jpg';
+import Food3 from '../../resource/foods/3.jpg';
+import Food4 from '../../resource/foods/4.jpg';
+import Food5 from '../../resource/foods/5.jpg';
+import Food6 from '../../resource/foods/6.jpg';
+import Food7 from '../../resource/foods/7.jpg';
+import Food8 from '../../resource/foods/8.jpg';
+
+const dataList = Mock.mock({
+  'dataList|5': [
+    {
+      'avator|1': [Avator1, Avator2, Avator3],
+      userName: '@cname',
+      time: '@date("yyyy-MM-dd HH:mm")', //日期
+      content: '@cparagraph',
+      city: '@city',
+      shopName: '@cword(5)',
+      'likeCount|0-99': 99,
+      'commentCount|0-99': 99,
+      'imgs|1-9': [Food1, Food2, Food3, Food4, Food5, Food6, Food7, Food8],
+      'simpleComment|0-5': [
+        {
+          userName: '@cname',
+          content: '@csentence',
+        },
+      ],
+    },
+  ],
+})
+
 
 export default class ShareListPannel extends React.Component {
   constructor(props) {
@@ -22,32 +58,7 @@ export default class ShareListPannel extends React.Component {
     dataList: PropTypes.array,
   };
   static defaultProps = {
-    dataList: [
-      // {
-      //   avator: Avator1,
-      //   userName: 'Tom12',
-      //   time: '2019-11-11 11:11',
-      //   content:
-      //     '主内容主内容主内容主内容主内容。。。。主内容主内容主内容主内容主内容。。。。主内容主内容主内容主内容主内容。。。。主内容主内容主内容主内容主内容。。。。',
-      //   likeCount: 10,
-      //   commentCount: 10,
-      //   imgs: [Food1, Food2, Food3, Food4, Food5, Food6, Food7, Food8, Food1],
-      //   simpleComment: [
-      //     {
-      //       userName: '小恶小坤',
-      //       content: '你好',
-      //     },
-      //     {
-      //       userName: '杨幂幂幂幂',
-      //       content: '你好aaaaa',
-      //     },
-      //     {
-      //       userName: '鳗鱼有饭',
-      //       content: '你好啊啊啊啊啊啊啊啊啊啊啊啊啊',
-      //     },
-      //   ],
-      // },
-    ],
+    dataList: dataList.dataList
   };
 
   onHorizontalSelectedIndexChange() {

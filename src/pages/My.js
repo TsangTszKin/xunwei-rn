@@ -16,13 +16,13 @@ import {
   StyleSheet,
   ScrollView,
 } from 'react-native';
-import {Tabs} from '@ant-design/react-native';
+import { Tabs } from '@ant-design/react-native';
 import BG_img from '../resource/my-bg.jpg';
 import Avator from '../resource/avator/3.jpg';
 import ShareListPannel from '../components/common/ShareListPannel';
 import ShopListPannel from '../components/common/ShopListPannel';
 import store from '../store/My';
-import {observer, inject} from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 
 @inject('indexStore')
 @observer
@@ -46,19 +46,19 @@ class My extends React.Component {
   render() {
     return (
       <View style={styles.containor}>
-        <View style={{height: 200}}>
+        <View style={{ height: 200 }}>
           <ImageBackground
             source={BG_img}
-            style={{width: '100%', height: 200, overflow: 'hidden'}}>
+            style={{ width: '100%', height: 200, overflow: 'hidden' }}>
             <View style={styles.info}>
               <View>
                 <Image
                   source={Avator}
-                  style={{width: 70, height: 70, borderRadius: 70}}
+                  style={{ width: 70, height: 70, borderRadius: 70 }}
                 />
               </View>
-              <Text style={{fontSize: 18, margin: 8}}>小喜</Text>
-              <Text style={{color: '#333'}}>你很懒，都不他妈写个签？</Text>
+              <Text style={{ fontSize: 18, margin: 8 }}>小喜</Text>
+              <Text style={{ color: '#333' }}>你很懒，都不他妈写个签？</Text>
             </View>
           </ImageBackground>
         </View>
@@ -88,24 +88,26 @@ class My extends React.Component {
             paddingTop: 10,
           }}>
           <Tabs
-            tabs={[{title: '发布'}, {title: '店铺收藏'}]}
+            tabs={[{ title: '发布' }, { title: '店铺收藏' }]}
             tabBarActiveTextColor="#333"
             tabBarInactiveTextColor="#808080"
             // tabBarBackgroundColor="#FBC464"
             tabBarUnderlineStyle="#FBC464"
             renderUnderline={() => {
-              return <View style={{backgroundColor: '#000'}} />;
+              return <View style={{ backgroundColor: '#000' }} />;
             }}>
-            <View style={{marginTop: 10}}>
+            <View style={{ marginTop: 10 }}>
               <ScrollView>
                 <ShareListPannel
-                  dataList={store.shareList.getData.dataSource}
+                  // dataList={store.shareList.getData.dataSource}
                 />
               </ScrollView>
             </View>
-            <View style={{marginTop: 10}}>
+            <View style={{ marginTop: 10 }}>
               <ScrollView>
-                <ShopListPannel dataList={store.shopList.getData.dataSource} />
+                <ShopListPannel
+                  // dataList={store.shopList.getData.dataSource}
+                />
               </ScrollView>
             </View>
           </Tabs>

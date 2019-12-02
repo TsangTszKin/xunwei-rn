@@ -8,12 +8,12 @@
  * @FilePath: \hello_world\src\pages\FindMetro.js
  */
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
-import {Button, Drawer, List} from '@ant-design/react-native';
+import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
+import { Button, Drawer, List } from '@ant-design/react-native';
 import MetroImg from '../resource/地铁(1).png';
 import ShopListPannel from '../components/common/ShopListPannel';
 import store from '../store/Find';
-import {observer} from 'mobx-react';
+import { observer } from 'mobx-react';
 
 @observer
 class FindMetro extends React.Component {
@@ -38,7 +38,7 @@ class FindMetro extends React.Component {
     const itemArr = lineMetro.map((item, index) => {
       return (
         <List.Item
-          style={{backgroundColor: '#333'}}
+          style={{ backgroundColor: '#333' }}
           key={index}
           thumb={
             <Text
@@ -54,7 +54,7 @@ class FindMetro extends React.Component {
               {item.name}
             </Text>
           }>
-          <Text style={{color: '#FFF', marginLeft: 10}}>
+          <Text style={{ color: '#FFF', marginLeft: 10 }}>
             {item.special ? '线' : '号线'}
           </Text>
         </List.Item>
@@ -71,9 +71,9 @@ class FindMetro extends React.Component {
             flexDirection: 'row',
             margin: 10,
           }}>
-          <Image source={MetroImg} style={{width: 30, height: 30}} />
+          <Image source={MetroImg} style={{ width: 30, height: 30 }} />
         </View>
-        <List style={{backgroundColor: '#333'}}>{itemArr}</List>
+        <List style={{ backgroundColor: '#333' }}>{itemArr}</List>
       </ScrollView>
     );
     return (
@@ -84,8 +84,10 @@ class FindMetro extends React.Component {
         drawerRef={el => (this.drawer = el)}
         onOpenChange={this.onOpenChange}
         drawerBackgroundColor="#ccc">
-        <View style={{flex: 1, padding: 8}}>
-          <ShopListPannel dataList={this.store.list.getData.dataSource} />
+        <View style={{ flex: 1, padding: 8 }}>
+          <ShopListPannel
+            // dataList={this.store.list.getData.dataSource}
+          />
           <Button onPress={() => this.drawer && this.drawer.openDrawer()}>
             根据地铁站点查找
           </Button>

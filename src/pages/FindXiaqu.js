@@ -8,12 +8,12 @@
  * @FilePath: \hello_world\src\pages\FindXiaqu.js
  */
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
-import {Button, Drawer, List, Toast} from '@ant-design/react-native';
+import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
+import { Button, Drawer, List, Toast } from '@ant-design/react-native';
 import AreaImg from '../resource/行政区(1).png';
 import ShopListPannel from '../components/common/ShopListPannel';
 import store from '../store/Find';
-import {observer} from 'mobx-react';
+import { observer } from 'mobx-react';
 
 @observer
 class FindXiaqu extends React.Component {
@@ -40,8 +40,8 @@ class FindXiaqu extends React.Component {
   render() {
     const itemArr = areaList.map((item, index) => {
       return (
-        <List.Item style={{backgroundColor: '#333'}} key={index}>
-          <Text style={{color: '#FFF', marginLeft: 10}}>{item.name}</Text>
+        <List.Item style={{ backgroundColor: '#333' }} key={index}>
+          <Text style={{ color: '#FFF', marginLeft: 10 }}>{item.name}</Text>
         </List.Item>
       );
     });
@@ -56,9 +56,9 @@ class FindXiaqu extends React.Component {
             flexDirection: 'row',
             margin: 10,
           }}>
-          <Image source={AreaImg} style={{width: 30, height: 30}} />
+          <Image source={AreaImg} style={{ width: 30, height: 30 }} />
         </View>
-        <List style={{backgroundColor: '#333'}}>{itemArr}</List>
+        <List style={{ backgroundColor: '#333' }}>{itemArr}</List>
       </ScrollView>
     );
     return (
@@ -69,8 +69,10 @@ class FindXiaqu extends React.Component {
         drawerRef={el => (this.drawer = el)}
         onOpenChange={this.onOpenChange}
         drawerBackgroundColor="#ccc">
-        <View style={{flex: 1, padding: 8}}>
-          <ShopListPannel dataList={this.store.list.getData.dataSource} />
+        <View style={{ flex: 1, padding: 8 }}>
+          <ShopListPannel
+            // dataList={this.store.list.getData.dataSource}
+          />
           <Button onPress={() => this.drawer && this.drawer.openDrawer()}>
             根据行政区域查找
           </Button>
